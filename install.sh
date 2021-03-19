@@ -2,7 +2,10 @@
 
 dotfiles_dir="$(pwd)"
 
-# Symlink fish config
+if test -d "$HOME/.config/fish"; then
+	rm -r "$HOME/.config/fish"
+fi
+
 ln -sfv "$dotfiles_dir/fish" "$HOME/.config"
 ln -sfv "$dotfiles_dir/git/.gitconfig" "$HOME/.gitconfig"
 
