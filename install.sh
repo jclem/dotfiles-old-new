@@ -31,7 +31,9 @@ if ! test -z "$CODESPACES"; then
 	wget https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip -O /tmp/exa.zip
 	unzip /tmp/exa.zip -d /tmp
 	sudo mv /tmp/exa-linux-x86_64 /usr/local/bin/exa
-end
+fi
 
-# Install asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+if ! test -d ~/.asdf; then
+	# Install asdf
+	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+fi
