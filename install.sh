@@ -11,7 +11,16 @@ if ! test -z "$CODESPACES"; then
 	sudo apt-add-repository -y ppa:fish-shell/release-3
 	sudo apt-get update
 	sudo apt-get install -y fish 
+fi
+
+# Set default shell
+if ! test -z "$CODESPACES"; then
 	sudo chsh -s $(which fish) codespace
+fi
+
+# Remove default fish prompt
+if test -f /etc/fish/conf.d/fish_prompt.fish; then
+	sudo rm /etc/fish/conf.d/fish_prompt.fish
 fi
 
 # Install asdf
