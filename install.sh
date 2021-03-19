@@ -8,6 +8,7 @@ ln -sfv "$dotfiles_dir/git/.gitconfig" "$HOME/.gitconfig"
 
 # Install apt packages
 if ! test -z "$CODESPACES"; then
+	sudo apt-add-repository -y ppa:fish-shell/release-3
 	sudo apt-get update
 	sudo apt-get install -y fish 
 	sudo chsh -s $(which fish) codespace
