@@ -4,6 +4,7 @@ dotfiles_dir="$(pwd)"
 
 # Symlink fish config
 ln -sfv "$dotfiles_dir/fish" "$HOME/.config"
+ln -sfv "$dotfiles_dir/git/.gitconfig" "$HOME/.gitconfig"
 
 # Install apt packages
 if ! test -z "$CODESPACES"; then
