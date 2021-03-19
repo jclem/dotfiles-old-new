@@ -9,7 +9,7 @@ ln -sfv "$dotfiles_dir/fish" "$HOME/.config"
 if ! test -z "$CODESPACES"; then
 	sudo apt-get update
 	sudo apt-get install -y fish 
-	chsh -s $(which fish)
+	sudo chsh -s $(which fish)
 fi
 
 # Install asdf
